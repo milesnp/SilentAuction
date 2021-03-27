@@ -7,6 +7,8 @@ namespace SilentAuction.Models
     {
         public int AuctionID { get; set; }
 
+        public int OrganizationID { get; set; }
+
         [Required]
         [StringLength(50)]
         [Display(Name = "Auction Name")]
@@ -18,6 +20,7 @@ namespace SilentAuction.Models
 
         [Required]
         [DataType(DataType.Date)]
+        public string Date { get; set;}
 
         public Organization Organization { get; set; }
 

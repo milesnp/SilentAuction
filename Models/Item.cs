@@ -16,6 +16,10 @@ namespace SilentAuction.Models
     {
         public int ItemID { get; set; }
 
+        public int AuctionID { get; set; }
+
+        public int DonorSpecialistID { get; set; }
+        public int DonorID { get; set; }
 
         [Required]
         public bool SuppressDonor { get; set;}
