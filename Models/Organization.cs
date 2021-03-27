@@ -12,6 +12,7 @@ namespace SilentAuction.Models {
     [Table("Organizations")]
     public class Organization : Person 
     {
+        public int ID { get; set; }
         public int DonorSpecialistID { get; set; }
         [Required]
         [StringLength(50)]

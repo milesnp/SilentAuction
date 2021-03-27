@@ -1,0 +1,92 @@
+@page
+@model SilentAuction.Pages.Items.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Item</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Item.AuctionID" class="control-label"></label>
+                <select asp-for="Item.AuctionID" class ="form-control" asp-items="ViewBag.AuctionID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Item.DonorSpecialistID" class="control-label"></label>
+                <input asp-for="Item.DonorSpecialistID" class="form-control" />
+                <span asp-validation-for="Item.DonorSpecialistID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Item.DonorID" class="control-label"></label>
+                <select asp-for="Item.DonorID" class ="form-control" asp-items="ViewBag.DonorID"></select>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Item.SuppressDonor" /> @Html.DisplayNameFor(model => model.Item.SuppressDonor)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Item.Value" class="control-label"></label>
+                <input asp-for="Item.Value" class="form-control" />
+                <span asp-validation-for="Item.Value" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Item.BuyItNowPrice" class="control-label"></label>
+                <input asp-for="Item.BuyItNowPrice" class="form-control" />
+                <span asp-validation-for="Item.BuyItNowPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Item.StartingBid" class="control-label"></label>
+                <input asp-for="Item.StartingBid" class="form-control" />
+                <span asp-validation-for="Item.StartingBid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Item.BiddingIncrement" class="control-label"></label>
+                <input asp-for="Item.BiddingIncrement" class="form-control" />
+                <span asp-validation-for="Item.BiddingIncrement" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Item.GroupID" class="control-label"></label>
+                <input asp-for="Item.GroupID" class="form-control" />
+                <span asp-validation-for="Item.GroupID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Item.ItemStatus" class="control-label"></label>
+                <select asp-for="Item.ItemStatus" class="form-control"></select>
+                <span asp-validation-for="Item.ItemStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Item.Description" class="control-label"></label>
+                <input asp-for="Item.Description" class="form-control" />
+                <span asp-validation-for="Item.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Item.Restrictions" class="control-label"></label>
+                <input asp-for="Item.Restrictions" class="form-control" />
+                <span asp-validation-for="Item.Restrictions" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Item.ItemCategory" class="control-label"></label>
+                <select asp-for="Item.ItemCategory" class="form-control"></select>
+                <span asp-validation-for="Item.ItemCategory" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

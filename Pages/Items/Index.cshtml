@@ -1,0 +1,108 @@
+@page
+@model SilentAuction.Pages.Items.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Item[0].DonorSpecialistID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Item[0].SuppressDonor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Item[0].Value)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Item[0].BuyItNowPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Item[0].StartingBid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Item[0].BiddingIncrement)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Item[0].GroupID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Item[0].ItemStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Item[0].Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Item[0].Restrictions)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Item[0].ItemCategory)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Item[0].Auction)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Item[0].Donor)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Item) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DonorSpecialistID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SuppressDonor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Value)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BuyItNowPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartingBid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BiddingIncrement)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GroupID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Restrictions)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemCategory)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Auction.AuctionName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Donor.CompanyName)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ItemID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ItemID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ItemID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

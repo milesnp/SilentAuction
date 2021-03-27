@@ -1,0 +1,79 @@
+@page
+@model SilentAuction.Pages.Bidders.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Bidder</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Bidder.LastName" class="control-label"></label>
+                <input asp-for="Bidder.LastName" class="form-control" />
+                <span asp-validation-for="Bidder.LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bidder.FirstName" class="control-label"></label>
+                <input asp-for="Bidder.FirstName" class="form-control" />
+                <span asp-validation-for="Bidder.FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bidder.CellNumber" class="control-label"></label>
+                <input asp-for="Bidder.CellNumber" class="form-control" />
+                <span asp-validation-for="Bidder.CellNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bidder.PhoneNumber" class="control-label"></label>
+                <input asp-for="Bidder.PhoneNumber" class="form-control" />
+                <span asp-validation-for="Bidder.PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bidder.Email" class="control-label"></label>
+                <input asp-for="Bidder.Email" class="form-control" />
+                <span asp-validation-for="Bidder.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bidder.AddressOne" class="control-label"></label>
+                <input asp-for="Bidder.AddressOne" class="form-control" />
+                <span asp-validation-for="Bidder.AddressOne" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bidder.AddressTwo" class="control-label"></label>
+                <input asp-for="Bidder.AddressTwo" class="form-control" />
+                <span asp-validation-for="Bidder.AddressTwo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bidder.City" class="control-label"></label>
+                <input asp-for="Bidder.City" class="form-control" />
+                <span asp-validation-for="Bidder.City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bidder.ZipCode" class="control-label"></label>
+                <input asp-for="Bidder.ZipCode" class="form-control" />
+                <span asp-validation-for="Bidder.ZipCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bidder.Notes" class="control-label"></label>
+                <input asp-for="Bidder.Notes" class="form-control" />
+                <span asp-validation-for="Bidder.Notes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
