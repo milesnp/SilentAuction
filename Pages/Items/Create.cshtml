@@ -18,13 +18,17 @@
                 <select asp-for="Item.AuctionID" class ="form-control" asp-items="ViewBag.AuctionID"></select>
             </div>
             <div class="form-group">
-                <label asp-for="Item.DonorSpecialistID" class="control-label"></label>
-                <input asp-for="Item.DonorSpecialistID" class="form-control" />
-                <span asp-validation-for="Item.DonorSpecialistID" class="text-danger"></span>
+                <label asp-for="Item.DonationSpecialistID" class="control-label"></label>
+                <select asp-for="Item.DonationSpecialistID" class ="form-control" asp-items="ViewBag.DonationSpecialistID"></select>
             </div>
             <div class="form-group">
                 <label asp-for="Item.DonorID" class="control-label"></label>
                 <select asp-for="Item.DonorID" class ="form-control" asp-items="ViewBag.DonorID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Item.ShortName" class="control-label"></label>
+                <input asp-for="Item.ShortName" class="form-control" />
+                <span asp-validation-for="Item.ShortName" class="text-danger"></span>
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
@@ -58,7 +62,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Item.ItemStatus" class="control-label"></label>
-                <select asp-for="Item.ItemStatus" class="form-control"></select>
+                <select asp-for="Item.ItemStatus" class="form-control" asp-items="Html.GetEnumSelectList<Models.ItemStatus>()"><option selected="true">Select one...</option></select>
                 <span asp-validation-for="Item.ItemStatus" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -73,7 +77,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Item.ItemCategory" class="control-label"></label>
-                <select asp-for="Item.ItemCategory" class="form-control"></select>
+                <select asp-for="Item.ItemCategory" class="form-control" asp-items="Html.GetEnumSelectList<Models.ItemCategory>()"><option selected="true">Select one...</option></select>
                 <span asp-validation-for="Item.ItemCategory" class="text-danger"></span>
             </div>
             <div class="form-group">

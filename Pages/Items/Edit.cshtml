@@ -20,14 +20,19 @@
                 <span asp-validation-for="Item.AuctionID" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Item.DonorSpecialistID" class="control-label"></label>
-                <input asp-for="Item.DonorSpecialistID" class="form-control" />
-                <span asp-validation-for="Item.DonorSpecialistID" class="text-danger"></span>
+                <label asp-for="Item.DonationSpecialistID" class="control-label"></label>
+                <select asp-for="Item.DonationSpecialistID" class="form-control" asp-items="ViewBag.DonationSpecialistID"></select>
+                <span asp-validation-for="Item.DonationSpecialistID" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Item.DonorID" class="control-label"></label>
                 <select asp-for="Item.DonorID" class="form-control" asp-items="ViewBag.DonorID"></select>
                 <span asp-validation-for="Item.DonorID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Item.ShortName" class="control-label"></label>
+                <input asp-for="Item.ShortName" class="form-control" />
+                <span asp-validation-for="Item.ShortName" class="text-danger"></span>
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">

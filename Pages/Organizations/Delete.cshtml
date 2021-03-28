@@ -13,12 +13,6 @@
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Organization.DonorSpecialistID)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Organization.DonorSpecialistID)
-        </dd>
-        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Organization.CompanyName)
         </dt>
         <dd class="col-sm-10">
@@ -47,6 +41,12 @@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Organization.PreferredContact)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Organization.DonationSpecialist)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Organization.DonationSpecialist.FirstName)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Organization.LastName)
@@ -95,6 +95,12 @@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Organization.City)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Organization.State)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Organization.State)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Organization.ZipCode)

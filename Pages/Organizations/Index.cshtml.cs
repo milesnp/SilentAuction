@@ -23,7 +23,8 @@ namespace SilentAuction.Pages.Organizations
 
         public async Task OnGetAsync()
         {
-            Organization = await _context.Organizations.ToListAsync();
+            Organization = await _context.Organizations
+                .Include(o => o.DonationSpecialist).ToListAsync();
         }
     }
 }

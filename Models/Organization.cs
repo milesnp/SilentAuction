@@ -13,7 +13,9 @@ namespace SilentAuction.Models {
     public class Organization : Person 
     {
         public int ID { get; set; }
-        public int DonorSpecialistID { get; set; }
+
+        [Display(Name = "Donation Specialist")]
+        public int DonationSpecialistID { get; set; }
         [Required]
         [StringLength(50)]
         [Display(Name = "Company Name")]

@@ -25,6 +25,7 @@ namespace SilentAuction.Pages.Items
         {
             Item = await _context.Items
                 .Include(i => i.Auction)
+                .Include(i => i.DonationSpecialist)
                 .Include(i => i.Donor).ToListAsync();
         }
     }

@@ -22,7 +22,8 @@ namespace SilentAuction.Pages.Items
         public IActionResult OnGet()
         {
         ViewData["AuctionID"] = new SelectList(_context.Auctions, "ID", "AuctionName");
-        ViewData["DonorID"] = new SelectList(_context.Set<Organization>(), "ID", "CompanyName");
+        ViewData["DonationSpecialistID"] = new SelectList(_context.DonationSpecialists, "ID", "FirstName");
+        ViewData["DonorID"] = new SelectList(_context.Organizations, "ID", "CompanyName");
             return Page();
         }
 

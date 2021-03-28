@@ -11,6 +11,8 @@ namespace SilentAuction.Models
     {
         [Key]
         public int ItemID { get; set; }
+
+        public int DonationSpecialistID { get; set; }
         
         [Required]
         [Display(Name = "Winning Bid")]

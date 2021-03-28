@@ -14,9 +14,8 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Organization.DonorSpecialistID" class="control-label"></label>
-                <input asp-for="Organization.DonorSpecialistID" class="form-control" />
-                <span asp-validation-for="Organization.DonorSpecialistID" class="text-danger"></span>
+                <label asp-for="Organization.DonationSpecialistID" class="control-label"></label>
+                <select asp-for="Organization.DonationSpecialistID" class ="form-control" asp-items="ViewBag.DonationSpecialistID"></select>
             </div>
             <div class="form-group">
                 <label asp-for="Organization.CompanyName" class="control-label"></label>
@@ -35,12 +34,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="Organization.DonorStatus" class="control-label"></label>
-                <select asp-for="Organization.DonorStatus" class="form-control"></select>
+                <select asp-for="Organization.DonorStatus" class="form-control" asp-items="Html.GetEnumSelectList<Models.DonorStatus>()"></select>
                 <span asp-validation-for="Organization.DonorStatus" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Organization.PreferredContact" class="control-label"></label>
-                <select asp-for="Organization.PreferredContact" class="form-control"></select>
+                <select asp-for="Organization.PreferredContact" class="form-control" asp-items="Html.GetEnumSelectList<Models.PreferredContact>()"><option selected="selected" value="">Please select</option></select>
                 <span asp-validation-for="Organization.PreferredContact" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -82,6 +81,11 @@
                 <label asp-for="Organization.City" class="control-label"></label>
                 <input asp-for="Organization.City" class="form-control" />
                 <span asp-validation-for="Organization.City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Organization.State" class="control-label"></label>
+                <input asp-for="Organization.State" class="form-control" />
+                <span asp-validation-for="Organization.State" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Organization.ZipCode" class="control-label"></label>

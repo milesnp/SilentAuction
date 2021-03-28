@@ -32,6 +32,7 @@ namespace SilentAuction.Pages.Items
 
             Item = await _context.Items
                 .Include(i => i.Auction)
+                .Include(i => i.DonationSpecialist)
                 .Include(i => i.Donor).FirstOrDefaultAsync(m => m.ItemID == id);
 
             if (Item == null)
@@ -39,7 +40,8 @@ namespace SilentAuction.Pages.Items
                 return NotFound();
             }
            ViewData["AuctionID"] = new SelectList(_context.Auctions, "ID", "AuctionName");
-           ViewData["DonorID"] = new SelectList(_context.Set<Organization>(), "ID", "CompanyName");
+           ViewData["DonationSpecialistID"] = new SelectList(_context.DonationSpecialists, "ID", "FirstName");
+           ViewData["DonorID"] = new SelectList(_context.Organizations, "ID", "CompanyName");
             return Page();
         }
 

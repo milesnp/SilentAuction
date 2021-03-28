@@ -29,7 +29,8 @@ namespace SilentAuction.Pages.Organizations
                 return NotFound();
             }
 
-            Organization = await _context.Organizations.FirstOrDefaultAsync(m => m.ID == id);
+            Organization = await _context.Organizations
+                .Include(o => o.DonationSpecialist).FirstOrDefaultAsync(m => m.ID == id);
 
             if (Organization == null)
             {
