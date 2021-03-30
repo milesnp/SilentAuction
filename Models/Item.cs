@@ -14,11 +14,16 @@ namespace SilentAuction.Models
     }
     public class Item
     {
+        
         public int ItemID { get; set; }
 
+        [Required]
         public int AuctionID { get; set; }
 
+        [Required]
         public int DonationSpecialistID { get; set; }
+
+        [Required]
         public int DonorID { get; set; }
 
         [Required]
@@ -55,13 +60,14 @@ namespace SilentAuction.Models
 
         [Column(TypeName = "nvarchar(24)")]
         public ItemCategory ItemCategory { get; set; }
-        [Required]
+
+        
         public Auction Auction { get; set; }
 
-        [Required]
+        
         public Organization Donor { get; set; }
 
-        [Required]
+        
         public DonationSpecialist DonationSpecialist { get; set; }
         #nullable enable
         public WinningBid? WinningBid { get; set; }

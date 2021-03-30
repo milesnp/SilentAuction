@@ -1,5 +1,8 @@
 bin/Debug/*
 obj/
+TC.db
+
+Migrations/*
 
 .vscode/*
 !.vscode/settings.json

@@ -21,7 +21,9 @@ namespace SilentAuction.Pages.WinningBids
 
         public IActionResult OnGet()
         {
-        ViewData["ItemID"] = new SelectList(_context.Items, "ItemID", "ItemID");
+        ViewData["BidderID"] = new SelectList(_context.Bidders, "ID", "FullName");
+        ViewData["DonationSpecialistID"] = new SelectList(_context.DonationSpecialists, "ID", "FullName");
+        ViewData["ItemID"] = new SelectList(_context.Items, "ItemID", "ShortName");
             return Page();
         }
 

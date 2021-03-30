@@ -23,6 +23,9 @@ namespace SilentAuction.Pages.Items
         [BindProperty]
         public Item Item { get; set; }
 
+        public SelectList Status { get; set; }
+        public SelectList Category { get; set; }
+
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null)
@@ -40,8 +43,12 @@ namespace SilentAuction.Pages.Items
                 return NotFound();
             }
            ViewData["AuctionID"] = new SelectList(_context.Auctions, "ID", "AuctionName");
-           ViewData["DonationSpecialistID"] = new SelectList(_context.DonationSpecialists, "ID", "FirstName");
+           ViewData["DonationSpecialistID"] = new SelectList(_context.DonationSpecialists, "ID", "FullName");
            ViewData["DonorID"] = new SelectList(_context.Organizations, "ID", "CompanyName");
+           
+           Status = new SelectList(Enum.GetNames(typeof(Models.ItemStatus)),Item.ItemStatus);
+           Category = new SelectList(Enum.GetNames(typeof(Models.ItemCategory)), Item.ItemCategory);
+
             return Page();
         }
 
@@ -74,6 +81,7 @@ namespace SilentAuction.Pages.Items
 
             return RedirectToPage("./Index");
         }
+
 
         private bool ItemExists(int id)
         {

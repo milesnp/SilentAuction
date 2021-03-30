@@ -15,6 +15,8 @@ namespace SilentAuction.Pages.WinningBids
     {
         private readonly SilentAuction.Data.ToolContext _context;
 
+        public SelectList Status { get; set; }
+
         public EditModel(SilentAuction.Data.ToolContext context)
         {
             _context = context;
@@ -31,13 +33,20 @@ namespace SilentAuction.Pages.WinningBids
             }
 
             WinningBid = await _context.WinningBids
+                .Include(w => w.Bidder)
+                .Include(w => w.DonationSpecialist)
                 .Include(w => w.Item).FirstOrDefaultAsync(m => m.ItemID == id);
 
             if (WinningBid == null)
             {
                 return NotFound();
             }
-           ViewData["ItemID"] = new SelectList(_context.Items, "ItemID", "ItemID");
+           ViewData["BidderID"] = new SelectList(_context.Bidders, "ID", "FullName");
+           ViewData["DonationSpecialistID"] = new SelectList(_context.DonationSpecialists, "ID", "FullName");
+           ViewData["ItemID"] = new SelectList(_context.Items, "ItemID", "ShortName");
+
+            Status = new SelectList(Enum.GetNames(typeof(Models.BidStatus)), WinningBid.BidStatus);
+
             return Page();
         }
 

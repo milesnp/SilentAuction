@@ -25,10 +25,22 @@
             @Html.DisplayFor(model => model.WinningBid.BidStatus)
         </dd>
         <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.WinningBid.DonationSpecialist)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.WinningBid.DonationSpecialist.FullName)
+        </dd>
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.WinningBid.Item)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.WinningBid.Item.ItemID)
+            @Html.DisplayFor(model => model.WinningBid.Item.ShortName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.WinningBid.Bidder)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.WinningBid.Bidder.FullName)
         </dd>
     </dl>
     

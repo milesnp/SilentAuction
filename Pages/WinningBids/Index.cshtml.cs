@@ -24,6 +24,8 @@ namespace SilentAuction.Pages.WinningBids
         public async Task OnGetAsync()
         {
             WinningBid = await _context.WinningBids
+                .Include(w => w.Bidder)
+                .Include(w => w.DonationSpecialist)
                 .Include(w => w.Item).ToListAsync();
         }
     }

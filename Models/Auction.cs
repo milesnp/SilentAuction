@@ -7,6 +7,7 @@ namespace SilentAuction.Models
     {
         public int ID { get; set; }
 
+        [Required]
         public int OrganizationID { get; set; }
 
         [Required]

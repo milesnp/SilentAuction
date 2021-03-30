@@ -20,7 +20,13 @@
                 @Html.DisplayNameFor(model => model.WinningBid[0].BidStatus)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.WinningBid[0].DonationSpecialist)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.WinningBid[0].Item)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WinningBid[0].Bidder)
             </th>
             <th></th>
         </tr>
@@ -35,7 +41,13 @@
                 @Html.DisplayFor(modelItem => item.BidStatus)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Item.ItemID)
+                @Html.DisplayFor(modelItem => item.DonationSpecialist.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Item.ShortName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bidder.FullName)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.ItemID">Edit</a> |

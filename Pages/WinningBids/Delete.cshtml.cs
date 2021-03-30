@@ -30,6 +30,8 @@ namespace SilentAuction.Pages.WinningBids
             }
 
             WinningBid = await _context.WinningBids
+                .Include(w => w.Bidder)
+                .Include(w => w.DonationSpecialist)
                 .Include(w => w.Item).FirstOrDefaultAsync(m => m.ItemID == id);
 
             if (WinningBid == null)

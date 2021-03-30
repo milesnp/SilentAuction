@@ -12,6 +12,9 @@ namespace SilentAuction.Models
         [Key]
         public int ItemID { get; set; }
 
+        public int BidderID { get; set;}
+
+        [Required]
         public int DonationSpecialistID { get; set; }
         
         [Required]
